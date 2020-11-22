@@ -1,0 +1,24 @@
+# Especificamos la version del compose
+
+version:  "3"
+
+#Especificamos los contenedores que vamos a crear
+# mongodb: nombre del contenedor
+#     container_name: nmymongobd
+#     image: imagen a obtener, en caso de no tenerla se descarga
+#     port: puertos
+#         - "puerto al que acceder al contenedor:puerto que expone el contenedor"
+#     logging:
+#       driver:none no muestra logs
+#     volumes:
+#       - rutaLocal:rutaContenedor
+services: 
+  mongodb:
+      container_name: mymongobd
+      image: mongo
+      ports:
+        - "27018:27017"
+      logging:
+        driver: none
+      volumes:
+        - /home/mongodb:/data/db
